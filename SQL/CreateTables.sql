@@ -1,0 +1,3 @@
+DROP DATABASE DnDUtilities;
+
+CREATE DATABASE DnDUtilities;
