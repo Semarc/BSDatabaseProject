@@ -14,7 +14,7 @@ namespace DatabaseProject.Sources
 				Command = Konstanten.SQLconnection.CreateCommand();
 				Command.CommandText = "SELECT Name FROM Nachnamen ORDER BY RAND() LIMIT 1";
 
-				Command.Parameters.Add(new MySqlParameter(Konstanten.SQLParameterNames.Volksname, Volksname);
+				Command.Parameters.Add(new MySqlParameter(Konstanten.SQLParameterNames.Volksname, Volksname));
 				Reader = Command.ExecuteReader();
 				Reader.Read();
 				return Reader.GetValue(0).ToString();

@@ -21,10 +21,7 @@ namespace DatabaseProject.Sources
 			}
 		}
 
-		public const string myConnectionString = "SERVER=193.26.158.48;" +
-												 "DATABASE=DnDUtilities;" +
-												 "UID=test;" +
-												 "PASSWORD=test123;";
+		public const string myConnectionString = "SERVER=193.26.158.48;DATABASE=DnDUtilities;UID=test;PASSWORD=test123;";
 
 		public static readonly MySqlConnection SQLconnection;
 
