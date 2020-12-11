@@ -63,7 +63,6 @@
             0,
             0,
             0});
-            this.nud_WuerfelAnzahl.ValueChanged += new System.EventHandler(this.nud_WuerfelAnzahl_ValueChanged);
             // 
             // cbx_WuerfelTyp
             // 
@@ -106,7 +105,6 @@
             this.lbl_WuerfelResult.Size = new System.Drawing.Size(138, 42);
             this.lbl_WuerfelResult.TabIndex = 5;
             this.lbl_WuerfelResult.Text = "Ergebnis";
-            this.lbl_WuerfelResult.Click += new System.EventHandler(this.lbl_WuerfelResult_Click);
             // 
             // WuerfelUtility
             // 

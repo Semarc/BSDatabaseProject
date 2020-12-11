@@ -38,17 +38,8 @@ namespace DatabaseProject
 			{
 				Results[intCurrentWuerfel] = RNG.Next(1, (int)cbx_WuerfelTyp.SelectedItem + 1);
 			}
-			lbl_WuerfelResult.Text = $"{string.Join(", ", Results)}, + {(int)nud_WuerfelBonus.Value} = {Results.Sum ()}";
+			lbl_WuerfelResult.Text = $"{string.Join(", ", Results)}, + {(int)nud_WuerfelBonus.Value} = {Results.Sum() + nud_WuerfelBonus.Value}";
 		}
 
-        private void lbl_WuerfelResult_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nud_WuerfelAnzahl_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-    }
+	}
 }
