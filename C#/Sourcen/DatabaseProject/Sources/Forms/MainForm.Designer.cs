@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tbc_MainControl = new System.Windows.Forms.TabControl();
 			this.tbp_WuerfelUtility = new System.Windows.Forms.TabPage();
 			this.uc_WuerfelUtility = new DatabaseProject.WuerfelUtility();
@@ -61,6 +62,7 @@
 			// 
 			// uc_WuerfelUtility
 			// 
+			this.uc_WuerfelUtility.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uc_WuerfelUtility.BackgroundImage")));
 			this.uc_WuerfelUtility.Location = new System.Drawing.Point(6, 6);
 			this.uc_WuerfelUtility.Name = "uc_WuerfelUtility";
 			this.uc_WuerfelUtility.Size = new System.Drawing.Size(675, 459);
