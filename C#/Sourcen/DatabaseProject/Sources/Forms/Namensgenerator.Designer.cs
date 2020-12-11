@@ -30,7 +30,7 @@
 		{
 			this.cbx_VolkAuswahl = new System.Windows.Forms.ComboBox();
 			this.btn_NachnameGenerieren = new System.Windows.Forms.Button();
-			this.lbl_NachnameGenerieren = new System.Windows.Forms.Label();
+			this.lbl_Nachname = new System.Windows.Forms.Label();
 			this.lbl_Vorname = new System.Windows.Forms.Label();
 			this.btn_VornamenGenerieren = new System.Windows.Forms.Button();
 			this.cbx_GeschlechtAuswahl = new System.Windows.Forms.ComboBox();
@@ -52,18 +52,18 @@
 			this.btn_NachnameGenerieren.Name = "btn_NachnameGenerieren";
 			this.btn_NachnameGenerieren.Size = new System.Drawing.Size(75, 23);
 			this.btn_NachnameGenerieren.TabIndex = 1;
-			this.btn_NachnameGenerieren.Text = "button1";
+			this.btn_NachnameGenerieren.Text = "GetNachname";
 			this.btn_NachnameGenerieren.UseVisualStyleBackColor = true;
-			this.btn_NachnameGenerieren.Click += new System.EventHandler(this.button1_Click);
+			this.btn_NachnameGenerieren.Click += new System.EventHandler(this.NachnamenButtonClick);
 			// 
 			// lbl_NachnameGenerieren
 			// 
-			this.lbl_NachnameGenerieren.AutoSize = true;
-			this.lbl_NachnameGenerieren.Location = new System.Drawing.Point(175, 127);
-			this.lbl_NachnameGenerieren.Name = "lbl_NachnameGenerieren";
-			this.lbl_NachnameGenerieren.Size = new System.Drawing.Size(35, 13);
-			this.lbl_NachnameGenerieren.TabIndex = 2;
-			this.lbl_NachnameGenerieren.Text = "label1";
+			this.lbl_Nachname.AutoSize = true;
+			this.lbl_Nachname.Location = new System.Drawing.Point(175, 127);
+			this.lbl_Nachname.Name = "lbl_NachnameGenerieren";
+			this.lbl_Nachname.Size = new System.Drawing.Size(35, 13);
+			this.lbl_Nachname.TabIndex = 2;
+			this.lbl_Nachname.Text = "label1";
 			// 
 			// lbl_Vorname
 			// 
@@ -80,8 +80,9 @@
 			this.btn_VornamenGenerieren.Name = "btn_VornamenGenerieren";
 			this.btn_VornamenGenerieren.Size = new System.Drawing.Size(75, 23);
 			this.btn_VornamenGenerieren.TabIndex = 3;
-			this.btn_VornamenGenerieren.Text = "button2";
+			this.btn_VornamenGenerieren.Text = "GetVorname";
 			this.btn_VornamenGenerieren.UseVisualStyleBackColor = true;
+			this.btn_VornamenGenerieren.Click += new System.EventHandler(this.VornamenButtonClick);
 			// 
 			// cbx_GeschlechtAuswahl
 			// 
@@ -100,7 +101,7 @@
 			this.Controls.Add(this.cbx_GeschlechtAuswahl);
 			this.Controls.Add(this.lbl_Vorname);
 			this.Controls.Add(this.btn_VornamenGenerieren);
-			this.Controls.Add(this.lbl_NachnameGenerieren);
+			this.Controls.Add(this.lbl_Nachname);
 			this.Controls.Add(this.btn_NachnameGenerieren);
 			this.Controls.Add(this.cbx_VolkAuswahl);
 			this.Name = "Namensgenerator";
@@ -114,7 +115,7 @@
 
 		private System.Windows.Forms.ComboBox cbx_VolkAuswahl;
 		private System.Windows.Forms.Button btn_NachnameGenerieren;
-		private System.Windows.Forms.Label lbl_NachnameGenerieren;
+		private System.Windows.Forms.Label lbl_Nachname;
 		private System.Windows.Forms.Label lbl_Vorname;
 		private System.Windows.Forms.Button btn_VornamenGenerieren;
 		private System.Windows.Forms.ComboBox cbx_GeschlechtAuswahl;

@@ -14,7 +14,7 @@ namespace DatabaseProject
 
 		public static string GetVorname(string Volksname, Geschlecht geschlecht)
 		{
-			return GetDatabaseString(Konstanten.SQLCommands.SelectNachname, new SQLParameter(Konstanten.ReplaceString.Volksname, Volksname), new SQLParameter(Konstanten.ReplaceString.Geschlecht, geschlecht.ToString()));
+			return GetDatabaseString(Konstanten.SQLCommands.SelectVorname, new SQLParameter(Konstanten.ReplaceString.Volksname, Volksname), new SQLParameter(Konstanten.ReplaceString.Geschlecht, geschlecht.ToString()));
 		}
 
 

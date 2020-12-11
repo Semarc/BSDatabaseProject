@@ -19,6 +19,10 @@ namespace DatabaseProject
 
 	public partial class Namensgenerator : UserControl
 	{
+		private string GewaehltersVolksname { get { return (string)cbx_VolkAuswahl.SelectedItem; } }
+		private Geschlecht GewaehltesGeschlecht { get { return (Geschlecht)cbx_GeschlechtAuswahl.SelectedItem; } }
+
+
 		public Namensgenerator()
 		{
 			InitializeComponent();
@@ -26,9 +30,15 @@ namespace DatabaseProject
 			cbx_GeschlechtAuswahl.DataSource = Enum.GetValues(typeof(Geschlecht));
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void NachnamenButtonClick(object sender, EventArgs e)
 		{
-			lbl_NachnameGenerieren.Text = Datenbankzugriff.GetNachname((string)cbx_VolkAuswahl.SelectedItem);
+			lbl_Nachname.Text = Datenbankzugriff.GetNachname(GewaehltersVolksname);
 		}
+
+		private void VornamenButtonClick(object sender, EventArgs e)
+		{
+			lbl_Vorname.Text = Datenbankzugriff.GetVorname(GewaehltersVolksname, GewaehltesGeschlecht);
+		}
+
 	}
 }
