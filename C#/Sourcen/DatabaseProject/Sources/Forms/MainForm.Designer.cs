@@ -32,7 +32,7 @@
 			this.tbp_WuerfelUtility = new System.Windows.Forms.TabPage();
 			this.uc_WuerfelUtility = new DatabaseProject.WuerfelUtility();
 			this.Namensgenerator = new System.Windows.Forms.TabPage();
-			this.namensgenerator1 = new DatabaseProject.Sources.Forms.Namensgenerator();
+			this.namensgenerator1 = new DatabaseProject.Namensgenerator();
 			this.tbc_MainControl.SuspendLayout();
 			this.tbp_WuerfelUtility.SuspendLayout();
 			this.Namensgenerator.SuspendLayout();
@@ -104,7 +104,7 @@
 		private System.Windows.Forms.TabPage tbp_WuerfelUtility;
 		private WuerfelUtility uc_WuerfelUtility;
 		private System.Windows.Forms.TabPage Namensgenerator;
-		private Sources.Forms.Namensgenerator namensgenerator1;
+		private Namensgenerator namensgenerator1;
 	}
 }
 

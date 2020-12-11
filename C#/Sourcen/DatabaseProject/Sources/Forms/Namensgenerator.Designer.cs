@@ -1,4 +1,4 @@
-﻿namespace DatabaseProject.Sources.Forms
+﻿namespace DatabaseProject
 {
 	partial class Namensgenerator
 	{
@@ -35,10 +35,12 @@
 			// 
 			// cbx_VolkAuswahl
 			// 
+			this.cbx_VolkAuswahl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbx_VolkAuswahl.FormattingEnabled = true;
 			this.cbx_VolkAuswahl.Location = new System.Drawing.Point(89, 82);
 			this.cbx_VolkAuswahl.Name = "cbx_VolkAuswahl";
 			this.cbx_VolkAuswahl.Size = new System.Drawing.Size(121, 21);
+			this.cbx_VolkAuswahl.Sorted = true;
 			this.cbx_VolkAuswahl.TabIndex = 0;
 			// 
 			// button1
