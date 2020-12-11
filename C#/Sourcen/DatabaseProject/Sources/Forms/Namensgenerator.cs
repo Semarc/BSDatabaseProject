@@ -23,11 +23,12 @@ namespace DatabaseProject
 		{
 			InitializeComponent();
 			cbx_VolkAuswahl.DataSource = Datenbankzugriff.GetVoelkerNamen();
+			cbx_GeschlechtAuswahl.DataSource = Enum.GetValues(typeof(Geschlecht));
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			label1.Text = Datenbankzugriff.GetNachname((string)cbx_VolkAuswahl.SelectedItem);
+			lbl_NachnameGenerieren.Text = Datenbankzugriff.GetNachname((string)cbx_VolkAuswahl.SelectedItem);
 		}
 	}
 }
