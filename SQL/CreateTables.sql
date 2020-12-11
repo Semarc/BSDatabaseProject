@@ -1,28 +1,28 @@
-DROP DATABASE DnDUtilities;
+DROP DATABASE IF EXISTS DnDUtilities;
 
 CREATE DATABASE DnDUtilities;
 
 USE DnDUtilities;
 
 CREATE TABLE Voelker(
-  Volk_Id   INT auto_increment PRIMARY KEY,
-  Volkname  VARCHAR(20)
+  Volkname  VARCHAR(30) PRIMARY KEY
 );
 
 CREATE TABLE Nachnamen(
-  Volk_Id   INT,
+  Volkname  VARCHAR(30),
   Name  VARCHAR(50),
   CONSTRAINT FK_VoelkerNachnamen
-    FOREIGN KEY (Volk_Id) REFERENCES Voelker (Volk_Id)
+    FOREIGN KEY (Volkname) REFERENCES Voelker (Volkname)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
 
 CREATE TABLE Vornamen(
-  Volk_Id   INT,
+  Volkname  VARCHAR(30),
   Name  VARCHAR(50),
+  Geschlecht ENUM('M','W'),
   CONSTRAINT FK_VoelkerVornamen
-    FOREIGN KEY (Volk_Id) REFERENCES Voelker (Volk_Id)
+    FOREIGN KEY (Volkname) REFERENCES Voelker (Volkname)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );

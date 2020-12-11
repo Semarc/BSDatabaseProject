@@ -27,12 +27,17 @@ namespace DatabaseProject.Sources
 
 		public static class SQLCommands
 		{
-
+			public const string SelectNachname = "SELECT Name FROM Nachnamen WHERE Volkname = '[VOLKSNAME]' ORDER BY RAND() LIMIT 1";
 		}
 
 		public static class SQLParameterNames
 		{
-			public static string Volksname = "Volksname";
+			public const string Volksname = "Volksname";
+		}
+
+		public static class ReplaceString
+		{
+			public const string Volksname = "[VOLKSNAME]";
 		}
 
 	}

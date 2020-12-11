@@ -12,12 +12,18 @@ namespace DatabaseProject.Sources
 			{
 
 				Command = Konstanten.SQLconnection.CreateCommand();
-				Command.CommandText = "SELECT Name FROM Nachnamen ORDER BY RAND() LIMIT 1";
+				Command.CommandText = Konstanten.SQLCommands.SelectNachname.Replace(Konstanten.ReplaceString.Volksname, "testvolk");
 
-				Command.Parameters.Add(new MySqlParameter(Konstanten.SQLParameterNames.Volksname, Volksname));
 				Reader = Command.ExecuteReader();
-				Reader.Read();
-				return Reader.GetValue(0).ToString();
+				if (Reader.HasRows)
+				{
+					Reader.Read();
+					return Reader.GetValue(0).ToString();
+				}
+				else
+				{
+					return null;
+				}
 
 			}
 #if !DEBUG
