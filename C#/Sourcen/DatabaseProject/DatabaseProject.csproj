@@ -92,7 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Sources\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\Datenbankzugriff.cs" />
     <Compile Include="Sources\Forms\MainForm.cs">
@@ -114,7 +114,7 @@
       <DependentUpon>WuerfelUtility.cs</DependentUpon>
     </Compile>
     <Compile Include="Sources\Konstanten.cs" />
-    <Compile Include="SQLParameter.cs" />
+    <Compile Include="Sources\SQLParameter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

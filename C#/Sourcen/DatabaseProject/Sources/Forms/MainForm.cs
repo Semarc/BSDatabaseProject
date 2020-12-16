@@ -15,6 +15,7 @@ namespace DatabaseProject
 		public MainForm()
 		{
 			InitializeComponent();
+			Konstanten.InitConnection();
 		}
 	}
 }

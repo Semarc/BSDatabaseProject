@@ -7,7 +7,7 @@ namespace DatabaseProject
 	public static class Konstanten
 	{
 
-		static Konstanten()
+		public static void InitConnection()
 		{
 			try
 			{
@@ -23,7 +23,7 @@ namespace DatabaseProject
 
 		public const string myConnectionString = "SERVER=193.26.158.48;DATABASE=DnDUtilities;UID=test;PASSWORD=test123;";
 
-		public static readonly MySqlConnection SQLconnection;
+		public static MySqlConnection SQLconnection;
 
 		public static class SQLCommands
 		{
