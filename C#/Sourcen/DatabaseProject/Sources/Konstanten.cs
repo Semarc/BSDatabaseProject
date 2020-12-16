@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -7,23 +8,29 @@ namespace DatabaseProject
 	public static class Konstanten
 	{
 
+		/// <summary>
+		/// Initilises the Conection to the Database
+		/// </summary>
 		public static void InitConnection()
 		{
 			try
 			{
-				SQLconnection = new MySqlConnection(myConnectionString);
-				SQLconnection.Open();
+				_SQLConnection = new MySqlConnection(myConnectionString);
+				_SQLConnection.Open();
 			}
 			catch
 			{
-				MessageBox.Show("Fehler beim verbinden mit der Datenbank");
-				Application.Exit();
+				MessageBox.Show($"Fehler beim verbinden mit der Datenbank. {Environment.NewLine}Nicht alle Features werden verfügbar sein");
 			}
 		}
 
 		public const string myConnectionString = "SERVER=193.26.158.48;DATABASE=DnDUtilities;UID=test;PASSWORD=test123;";
 
-		public static MySqlConnection SQLconnection;
+		private static MySqlConnection _SQLConnection;
+
+		public static MySqlConnection SQLconnection { get { return _SQLConnection; } }
+
+		public static bool HasConnection { get { return SQLconnection?.State == System.Data.ConnectionState.Open; } }
 
 		public static class SQLCommands
 		{

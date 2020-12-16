@@ -26,8 +26,20 @@ namespace DatabaseProject
 		public Namensgenerator()
 		{
 			InitializeComponent();
-			cbx_VolkAuswahl.DataSource = Datenbankzugriff.GetVoelkerNamen();
-			cbx_GeschlechtAuswahl.DataSource = Enum.GetValues(typeof(Geschlecht));
+
+			if (Konstanten.HasConnection)
+			{
+				cbx_VolkAuswahl.DataSource = Datenbankzugriff.GetVoelkerNamen();
+				cbx_GeschlechtAuswahl.DataSource = Enum.GetValues(typeof(Geschlecht));
+			}
+			else
+			{
+				foreach (Control control in Controls)
+				{
+					control.Dispose();
+				}
+			}
+
 		}
 
 		private void NachnamenButtonClick(object sender, EventArgs e)
