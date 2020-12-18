@@ -29,25 +29,15 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			this.tbc_MainControl = new System.Windows.Forms.TabControl();
 			this.tbp_WuerfelUtility = new System.Windows.Forms.TabPage();
 			this.uc_WuerfelUtility = new DatabaseProject.WuerfelUtility();
-			this.Namensgenerator = new System.Windows.Forms.TabPage();
-			this.namensgenerator1 = new DatabaseProject.Namensgenerator();
-			this.tbc_MainControl.SuspendLayout();
+			this.tbc_MainControl = new System.Windows.Forms.TabControl();
+			this.tbp_Namensgenerator = new System.Windows.Forms.TabPage();
+			this.uc_Namensgenerator = new DatabaseProject.Namensgenerator();
 			this.tbp_WuerfelUtility.SuspendLayout();
-			this.Namensgenerator.SuspendLayout();
+			this.tbc_MainControl.SuspendLayout();
+			this.tbp_Namensgenerator.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// tbc_MainControl
-			// 
-			this.tbc_MainControl.Controls.Add(this.tbp_WuerfelUtility);
-			this.tbc_MainControl.Controls.Add(this.Namensgenerator);
-			this.tbc_MainControl.Location = new System.Drawing.Point(12, 12);
-			this.tbc_MainControl.Name = "tbc_MainControl";
-			this.tbc_MainControl.SelectedIndex = 0;
-			this.tbc_MainControl.Size = new System.Drawing.Size(1001, 604);
-			this.tbc_MainControl.TabIndex = 0;
 			// 
 			// tbp_WuerfelUtility
 			// 
@@ -57,33 +47,45 @@
 			this.tbp_WuerfelUtility.Padding = new System.Windows.Forms.Padding(3);
 			this.tbp_WuerfelUtility.Size = new System.Drawing.Size(993, 578);
 			this.tbp_WuerfelUtility.TabIndex = 0;
-			this.tbp_WuerfelUtility.Text = "tabPage1";
+			this.tbp_WuerfelUtility.Text = "Würfel-Utility";
 			this.tbp_WuerfelUtility.UseVisualStyleBackColor = true;
 			// 
 			// uc_WuerfelUtility
 			// 
 			this.uc_WuerfelUtility.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uc_WuerfelUtility.BackgroundImage")));
-			this.uc_WuerfelUtility.Location = new System.Drawing.Point(6, 6);
+			this.uc_WuerfelUtility.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.uc_WuerfelUtility.Location = new System.Drawing.Point(3, 3);
 			this.uc_WuerfelUtility.Name = "uc_WuerfelUtility";
-			this.uc_WuerfelUtility.Size = new System.Drawing.Size(675, 459);
+			this.uc_WuerfelUtility.Size = new System.Drawing.Size(987, 572);
 			this.uc_WuerfelUtility.TabIndex = 0;
 			// 
-			// Namensgenerator
+			// tbc_MainControl
 			// 
-			this.Namensgenerator.Controls.Add(this.namensgenerator1);
-			this.Namensgenerator.Location = new System.Drawing.Point(4, 22);
-			this.Namensgenerator.Name = "Namensgenerator";
-			this.Namensgenerator.Size = new System.Drawing.Size(993, 578);
-			this.Namensgenerator.TabIndex = 1;
-			this.Namensgenerator.Text = "tabPage1";
-			this.Namensgenerator.UseVisualStyleBackColor = true;
+			this.tbc_MainControl.Controls.Add(this.tbp_WuerfelUtility);
+			this.tbc_MainControl.Controls.Add(this.tbp_Namensgenerator);
+			this.tbc_MainControl.Location = new System.Drawing.Point(12, 12);
+			this.tbc_MainControl.Name = "tbc_MainControl";
+			this.tbc_MainControl.SelectedIndex = 0;
+			this.tbc_MainControl.Size = new System.Drawing.Size(1001, 604);
+			this.tbc_MainControl.TabIndex = 0;
 			// 
-			// namensgenerator1
+			// tbp_Namensgenerator
 			// 
-			this.namensgenerator1.Location = new System.Drawing.Point(124, 69);
-			this.namensgenerator1.Name = "namensgenerator1";
-			this.namensgenerator1.Size = new System.Drawing.Size(691, 424);
-			this.namensgenerator1.TabIndex = 0;
+			this.tbp_Namensgenerator.Controls.Add(this.uc_Namensgenerator);
+			this.tbp_Namensgenerator.Location = new System.Drawing.Point(4, 22);
+			this.tbp_Namensgenerator.Name = "tbp_Namensgenerator";
+			this.tbp_Namensgenerator.Size = new System.Drawing.Size(993, 578);
+			this.tbp_Namensgenerator.TabIndex = 1;
+			this.tbp_Namensgenerator.Text = "Namensgenerator";
+			this.tbp_Namensgenerator.UseVisualStyleBackColor = true;
+			// 
+			// uc_Namensgenerator
+			// 
+			this.uc_Namensgenerator.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.uc_Namensgenerator.Location = new System.Drawing.Point(0, 0);
+			this.uc_Namensgenerator.Name = "uc_Namensgenerator";
+			this.uc_Namensgenerator.Size = new System.Drawing.Size(993, 578);
+			this.uc_Namensgenerator.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -93,20 +95,20 @@
 			this.Controls.Add(this.tbc_MainControl);
 			this.Name = "MainForm";
 			this.Text = "Form1";
-			this.tbc_MainControl.ResumeLayout(false);
 			this.tbp_WuerfelUtility.ResumeLayout(false);
-			this.Namensgenerator.ResumeLayout(false);
+			this.tbc_MainControl.ResumeLayout(false);
+			this.tbp_Namensgenerator.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.TabControl tbc_MainControl;
+		private Namensgenerator namensgenerator1;
 		private System.Windows.Forms.TabPage tbp_WuerfelUtility;
 		private WuerfelUtility uc_WuerfelUtility;
-		private System.Windows.Forms.TabPage Namensgenerator;
-		private Namensgenerator namensgenerator1;
+		private System.Windows.Forms.TabControl tbc_MainControl;
+		private System.Windows.Forms.TabPage tbp_Namensgenerator;
+		private Namensgenerator uc_Namensgenerator;
 	}
 }
 

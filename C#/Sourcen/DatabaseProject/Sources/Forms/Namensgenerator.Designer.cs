@@ -50,17 +50,17 @@
 			// 
 			this.btn_NachnameGenerieren.Location = new System.Drawing.Point(89, 122);
 			this.btn_NachnameGenerieren.Name = "btn_NachnameGenerieren";
-			this.btn_NachnameGenerieren.Size = new System.Drawing.Size(75, 23);
+			this.btn_NachnameGenerieren.Size = new System.Drawing.Size(96, 23);
 			this.btn_NachnameGenerieren.TabIndex = 1;
 			this.btn_NachnameGenerieren.Text = "GetNachname";
 			this.btn_NachnameGenerieren.UseVisualStyleBackColor = true;
 			this.btn_NachnameGenerieren.Click += new System.EventHandler(this.NachnamenButtonClick);
 			// 
-			// lbl_NachnameGenerieren
+			// lbl_Nachname
 			// 
 			this.lbl_Nachname.AutoSize = true;
-			this.lbl_Nachname.Location = new System.Drawing.Point(175, 127);
-			this.lbl_Nachname.Name = "lbl_NachnameGenerieren";
+			this.lbl_Nachname.Location = new System.Drawing.Point(191, 127);
+			this.lbl_Nachname.Name = "lbl_Nachname";
 			this.lbl_Nachname.Size = new System.Drawing.Size(35, 13);
 			this.lbl_Nachname.TabIndex = 2;
 			this.lbl_Nachname.Text = "label1";
@@ -68,7 +68,7 @@
 			// lbl_Vorname
 			// 
 			this.lbl_Vorname.AutoSize = true;
-			this.lbl_Vorname.Location = new System.Drawing.Point(175, 212);
+			this.lbl_Vorname.Location = new System.Drawing.Point(191, 212);
 			this.lbl_Vorname.Name = "lbl_Vorname";
 			this.lbl_Vorname.Size = new System.Drawing.Size(35, 13);
 			this.lbl_Vorname.TabIndex = 4;
@@ -78,7 +78,7 @@
 			// 
 			this.btn_VornamenGenerieren.Location = new System.Drawing.Point(89, 207);
 			this.btn_VornamenGenerieren.Name = "btn_VornamenGenerieren";
-			this.btn_VornamenGenerieren.Size = new System.Drawing.Size(75, 23);
+			this.btn_VornamenGenerieren.Size = new System.Drawing.Size(96, 23);
 			this.btn_VornamenGenerieren.TabIndex = 3;
 			this.btn_VornamenGenerieren.Text = "GetVorname";
 			this.btn_VornamenGenerieren.UseVisualStyleBackColor = true;

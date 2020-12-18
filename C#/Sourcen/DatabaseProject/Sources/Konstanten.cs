@@ -24,7 +24,7 @@ namespace DatabaseProject
 			}
 		}
 
-		public const string myConnectionString = "SERVER=193.26.158.48;DATABASE=DnDUtilities;UID=test;PASSWORD=test123;";
+		public const string myConnectionString = "SERVER=193.26.158.48;DATABASE=DnDUtilities;UID=bkah;PASSWORD=rNwnzLwb77FYWbSX;";
 
 		private static MySqlConnection _SQLConnection;
 

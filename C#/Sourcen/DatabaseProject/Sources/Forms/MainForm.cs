@@ -12,10 +12,19 @@ namespace DatabaseProject
 {
 	public partial class MainForm : Form
 	{
+		private WuerfelUtility Wuerfeler;
+		private Namensgenerator Namen;
+
 		public MainForm()
 		{
-			InitializeComponent();
 			Konstanten.InitConnection();
+			InitializeComponent();
+
+			if (Konstanten.HasConnection == false)
+			{
+				tbc_MainControl.TabPages.Remove(tbp_Namensgenerator);
+			}
+
 		}
 	}
 }

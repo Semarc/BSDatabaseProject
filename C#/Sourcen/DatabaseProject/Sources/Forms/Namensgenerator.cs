@@ -31,15 +31,9 @@ namespace DatabaseProject
 			{
 				cbx_VolkAuswahl.DataSource = Datenbankzugriff.GetVoelkerNamen();
 				cbx_GeschlechtAuswahl.DataSource = Enum.GetValues(typeof(Geschlecht));
+				btn_NachnameGenerieren.PerformClick();
+				btn_VornamenGenerieren.PerformClick();
 			}
-			else
-			{
-				foreach (Control control in Controls)
-				{
-					control.Dispose();
-				}
-			}
-
 		}
 
 		private void NachnamenButtonClick(object sender, EventArgs e)

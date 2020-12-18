@@ -19,8 +19,8 @@ CREATE TABLE Nachnamen(
 
 CREATE TABLE Vornamen(
   Volkname  VARCHAR(30),
-  Name  VARCHAR(50),
   Geschlecht ENUM('M','W'),
+  Name  VARCHAR(50),
   CONSTRAINT FK_VoelkerVornamen
     FOREIGN KEY (Volkname) REFERENCES Voelker (Volkname)
     ON DELETE CASCADE
