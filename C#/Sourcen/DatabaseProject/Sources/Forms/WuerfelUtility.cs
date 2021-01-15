@@ -41,5 +41,14 @@ namespace DatabaseProject
 			lbl_WuerfelResult.Text = $"{string.Join(", ", Results)}, + {(int)nud_WuerfelBonus.Value} = {Results.Sum() + nud_WuerfelBonus.Value}";
 		}
 
-	}
+        private void Wüfelanzahl_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
