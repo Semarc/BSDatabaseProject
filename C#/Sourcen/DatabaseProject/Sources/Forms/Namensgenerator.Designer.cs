@@ -54,7 +54,7 @@
             this.cbx_VolkAuswahl.Size = new System.Drawing.Size(106, 38);
             this.cbx_VolkAuswahl.Sorted = true;
             this.cbx_VolkAuswahl.TabIndex = 0;
-            this.cbx_VolkAuswahl.SelectedIndexChanged += new System.EventHandler(this.cbx_VolkAuswahl_SelectedIndexChanged);
+
             // 
             // btn_NachnameGenerieren
             // 
@@ -126,6 +126,7 @@
             this.cbx_GeschlechtAuswahl.Size = new System.Drawing.Size(57, 38);
             this.cbx_GeschlechtAuswahl.Sorted = true;
             this.cbx_GeschlechtAuswahl.TabIndex = 5;
+ 
             // 
             // label1
             // 
@@ -138,7 +139,7 @@
             this.label1.Size = new System.Drawing.Size(486, 46);
             this.label1.TabIndex = 6;
             this.label1.Text = "WÄHLE DEINEN NAMEN!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+  
             // 
             // label2
             // 

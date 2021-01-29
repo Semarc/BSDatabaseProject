@@ -46,14 +46,8 @@ namespace DatabaseProject
 			lbl_Vorname.Text = Datenbankzugriff.GetVorname(GewaehltersVolksname, GewaehltesGeschlecht);
 		}
 
-        private void cbx_VolkAuswahl_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
