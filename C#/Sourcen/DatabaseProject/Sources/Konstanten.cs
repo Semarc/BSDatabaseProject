@@ -38,6 +38,10 @@ namespace DatabaseProject
 			public const string SelectVorname = "SELECT Name FROM Vornamen WHERE Volkname = '[VOLKSNAME]' AND Geschlecht = '[GESCHLECHT]' ORDER BY RAND() LIMIT 1";
 
 			public const string SelectVoelker = "SELECT Volkname FROM Voelker";
+
+			public const string SelectTyp = "SELECT DISTINCT Typ FROM Loot";
+			public const string SelectSeltenheit = "SELECT DISTINCT Seltenheit FROM Loot";
+			public const string SelectBeute = "SELECT Name, Werte FROM Loot WHERE Typ = '[TYP]' AND Seltenheit = '[SELTENHEIT]' ORDER BY RAND() LIMIT 1";
 		}
 
 		public static class SQLParameterNames
@@ -49,6 +53,8 @@ namespace DatabaseProject
 		{
 			public const string Volksname = "[VOLKSNAME]";
 			public const string Geschlecht = "[GESCHLECHT]";
+			public const string Typ = "[TYP]";
+			public const string Seltenheit = "[SELTENHEIT]";
 		}
 
 	}

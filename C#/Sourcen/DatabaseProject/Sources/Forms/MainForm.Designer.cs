@@ -32,12 +32,14 @@
             this.tbp_WuerfelUtility = new System.Windows.Forms.TabPage();
             this.tbc_MainControl = new System.Windows.Forms.TabControl();
             this.tbp_Namensgenerator = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.uc_WuerfelUtility = new DatabaseProject.WuerfelUtility();
             this.uc_Namensgenerator = new DatabaseProject.Namensgenerator();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.loot1 = new DatabaseProject.Sources.Forms.Loot();
             this.tbp_WuerfelUtility.SuspendLayout();
             this.tbc_MainControl.SuspendLayout();
             this.tbp_Namensgenerator.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbp_WuerfelUtility
@@ -77,6 +79,17 @@
             this.tbp_Namensgenerator.Text = "Namensgenerator";
             this.tbp_Namensgenerator.UseVisualStyleBackColor = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.loot1);
+            this.tabPage1.Location = new System.Drawing.Point(28, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(630, 458);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // uc_WuerfelUtility
             // 
             this.uc_WuerfelUtility.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -102,15 +115,13 @@
             this.uc_Namensgenerator.TabIndex = 0;
             this.uc_Namensgenerator.Load += new System.EventHandler(this.uc_Namensgenerator_Load);
             // 
-            // tabPage1
+            // loot1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(28, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(630, 458);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.loot1.Location = new System.Drawing.Point(0, -4);
+            this.loot1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.loot1.Name = "loot1";
+            this.loot1.Size = new System.Drawing.Size(630, 462);
+            this.loot1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -125,6 +136,7 @@
             this.tbp_WuerfelUtility.ResumeLayout(false);
             this.tbc_MainControl.ResumeLayout(false);
             this.tbp_Namensgenerator.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -137,6 +149,7 @@
 		private Namensgenerator uc_Namensgenerator;
         public System.Windows.Forms.TabControl tbc_MainControl;
         private System.Windows.Forms.TabPage tabPage1;
+        private Sources.Forms.Loot loot1;
     }
 }
 

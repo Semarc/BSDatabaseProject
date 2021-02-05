@@ -6,7 +6,7 @@ namespace DatabaseProject
 {
 	public static class Datenbankzugriff
 	{
-		#region GetSingleStrin
+		#region GetSingleString
 		public static string GetNachname(string Volksname)
 		{
 			return GetDatabaseString(Konstanten.SQLCommands.SelectNachname, new SQLParameter(Konstanten.ReplaceString.Volksname, Volksname));
@@ -17,7 +17,10 @@ namespace DatabaseProject
 			return GetDatabaseString(Konstanten.SQLCommands.SelectVorname, new SQLParameter(Konstanten.ReplaceString.Volksname, Volksname), new SQLParameter(Konstanten.ReplaceString.Geschlecht, geschlecht.ToString()));
 		}
 
-
+		public static string GetBeute(string Typ, string Seltenheit)
+		{
+			return GetDatabaseString(Konstanten.SQLCommands.SelectBeute, new SQLParameter(Konstanten.ReplaceString.Typ, Typ), new SQLParameter(Konstanten.ReplaceString.Seltenheit, Seltenheit));
+		}
 
 		public static string GetDatabaseString(string CommandText, params SQLParameter[] Parameters)
 		{
@@ -63,6 +66,73 @@ namespace DatabaseProject
 			try
 			{
 				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectVoelker);
+				Reader = Command.ExecuteReader();
+
+				List<string> Results = new List<string>();
+				while (Reader.Read())
+				{
+					Results.Add(Reader.GetValue(0).ToString());
+				}
+
+				Results.Sort();
+				return Results.ToArray();
+			}
+#if !DEBUG
+			catch
+			{
+				return new[] { "Fehler beim Datenbankzugriff" };
+			}
+#endif
+			finally
+			{
+
+				Command?.Dispose();
+				Reader?.Close();
+
+			}
+			return null;
+		}
+
+		public static string[] GetTyp()
+		{
+			MySqlDataReader Reader = null;
+			MySqlCommand Command = null;
+			try
+			{
+				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectTyp);
+				Reader = Command.ExecuteReader();
+
+				List<string> Results = new List<string>();
+				while (Reader.Read())
+				{
+					Results.Add(Reader.GetValue(0).ToString());
+				}
+
+				Results.Sort();
+				return Results.ToArray();
+			}
+#if !DEBUG
+			catch
+			{
+				return new[] { "Fehler beim Datenbankzugriff" };
+			}
+#endif
+			finally
+			{
+
+				Command?.Dispose();
+				Reader?.Close();
+
+			}
+			return null;
+		}
+		public static string[] GetSeltenheit()
+		{
+			MySqlDataReader Reader = null;
+			MySqlCommand Command = null;
+			try
+			{
+				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectSeltenheit);
 				Reader = Command.ExecuteReader();
 
 				List<string> Results = new List<string>();

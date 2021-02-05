@@ -15,6 +15,30 @@ namespace DatabaseProject.Sources.Forms
         public Loot()
         {
             InitializeComponent();
+
+            if (Konstanten.HasConnection)
+            {
+                typ.DataSource = Datenbankzugriff.GetTyp();
+                Seltenheit.DataSource = Datenbankzugriff.GetSeltenheit();
+                
+            }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Beute.Text = Datenbankzugriff.GetBeute(typ.Text, Seltenheit.Text);
+        }
+
+       
     }
 }
