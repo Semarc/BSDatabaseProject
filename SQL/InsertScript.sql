@@ -5,7 +5,6 @@ INSERT INTO `Voelker`(`Volkname`)
                      ('Elf'     ),
                      ('Zwerg'   );
 
-
 DELETE FROM `Nachnamen` WHERE `Volkname` = 'Mensch';
 
 INSERT INTO `Nachnamen`(`Volkname`, `Name`          )
@@ -50,7 +49,6 @@ INSERT INTO `Nachnamen`(`Volkname`, `Name`          )
                        ('Mensch'  , 'Wilxes'        ),
                        ('Mensch'  , 'Addams'        );
 
-
 DELETE FROM `Nachnamen` WHERE `Volkname` = 'Elf';
 
 INSERT INTO `Nachnamen`(`Volkname`, `Name`          )
@@ -93,7 +91,6 @@ INSERT INTO `Nachnamen`(`Volkname`, `Name`          )
                        ('Elf'     , 'Selorn'        ),
                        ('Elf'     , 'Ulongyr'       ),
                        ('Elf'     , 'Raedrim'       );
-
 
 DELETE FROM `Nachnamen` WHERE `Volkname` = 'Zwerg';
 
@@ -139,7 +136,6 @@ INSERT INTO `Nachnamen`(`Volkname`, `Name`          )
                        ('Zwerg'   , 'Klorda'        ),
                        ('Zwerg'   , 'Vultheim'      );
 
-
 DELETE FROM `Vornamen` 
       WHERE `Volkname`   = 'Mensch' 
         AND `Geschlecht` = 'M';
@@ -165,7 +161,6 @@ INSERT INTO `Vornamen`(`Volkname`, `Geschlecht`, `Name`     )
                       ('Mensch'  , 'M'         , 'Kain'     ),
                       ('Mensch'  , 'M'         , 'Cale'     ),
                       ('Mensch'  , 'M'         , 'Tilton'   );
-
 
 DELETE FROM `Vornamen` 
       WHERE `Volkname`   = 'Mensch' 
@@ -193,7 +188,6 @@ INSERT INTO `Vornamen`(`Volkname`, `Geschlecht`, `Name`     )
                       ('Mensch'  , 'W'         , 'Alethra'  ),
                       ('Mensch'  , 'W'         , 'Tana'     );
 
-
 DELETE FROM `Vornamen` 
       WHERE `Volkname`   = 'Elf' 
         AND `Geschlecht` = 'M';
@@ -219,7 +213,6 @@ INSERT INTO `Vornamen`(`Volkname`, `Geschlecht`, `Name`     )
                       ('Elf'     , 'M'         , 'Evaryan'  ),
                       ('Elf'     , 'M'         , 'Ethrion'  ),
                       ('Elf'     , 'M'         , 'Drathuil' );
-
 
 DELETE FROM `Vornamen` 
       WHERE `Volkname`   = 'Elf' 
@@ -247,7 +240,6 @@ INSERT INTO `Vornamen`(`Volkname`, `Geschlecht`, `Name`     )
                       ('Elf'     , 'W'         , 'Ilyrana'  ),
                       ('Elf'     , 'W'         , 'Kavarala' );
 
-
 DELETE FROM `Vornamen` 
       WHERE `Volkname`   = 'Zwerg' 
         AND `Geschlecht` = 'M';
@@ -274,7 +266,6 @@ INSERT INTO `Vornamen`(`Volkname`, `Geschlecht`, `Name`     )
                       ('Zwerg'   , 'M'         , 'Kildal'   ),
                       ('Zwerg'   , 'M'         , 'Baelnar'  );
 
-
 DELETE FROM `Vornamen` 
       WHERE `Volkname`   = 'Zwerg' 
         AND `Geschlecht` = 'W';
@@ -300,3 +291,56 @@ INSERT INTO `Vornamen`(`Volkname`, `Geschlecht`, `Name`     )
                       ('Zwerg'   , 'W'         , 'Kotri'    ),
                       ('Zwerg'   , 'W'         , 'Kristryd' ),
                       ('Zwerg'   , 'W'         , 'Beyla'    );
+
+
+
+DELETE FROM `Loot`;
+
+INSERT INTO `Loot`(`Typ`        , `Seltenheit`, `Werte`               , `Name`                    )
+           VALUES ('Armor'      , 'Uncommen'  , '+1AC'                , 'Adamantine Armor'        ),
+                  ('Boots'      , 'Uncommen'  , '+1 Speed'            , 'Boots of Elvenkind'      ),
+                  ('Accessories', 'Uncommen'  , 'Carry a lot'         , 'Bag of Holding'          ),
+                  ('Armor'      , 'Uncommen'  , '+1 Stealth'          , 'Rouge Armor'             ),
+                  ('Cloak'      , 'Uncommen'  , '+1AC'                , 'Cloak of Protection'     ),
+                  ('Accessories', 'Uncommen'  , '+2AC'                , 'Ring of Protection'      ),
+                  ('Sword'      , 'Rare'      , '1d6 against Dragons' , 'Flaming Sword'           ),
+                  ('Shield'     , 'Rare'      , '+2AC'                , 'Shield of Defense'       ),
+                  ('Sword'      , 'Rare'      , '+1d6 fire damage'    , 'Flaming Sword'           ),
+                  ('Accessories', 'Rare'      , 'Invisibility'        , 'Elixier of Invisibility' ),
+                  ('Accessories', 'Legendary' , 'you shall not ask!'  , 'Deck of many things'     ),
+                  ('Armor'      , 'Legendary' , 'Strength = 19'       , 'Beld of Giant Strength'  );
+
+
+
+DELETE FROM `Gegner`;
+
+INSERT INTO `Gegner`(`Name`                      , `Typ`        ,  `Enviroment` , `CR` )
+             VALUES ('Brown Bear'                , 'Beast'      , 'Forest'      , 1    ),
+                    ('Dire Wolf'                 , 'Beast'      , 'Forest'      , 1    ),
+                    ('Giant Eagle'               , 'Beast'      , 'Hill'        , 1    ),
+                    ('Fire Snake'                , 'Elemental'  , 'Dungeon'     , 1    ),
+                    ('Galcanic Soulblade'        , 'Elemental'  , 'Dungeon'     , 1    ),
+                    ('Duargar Soulblade'         , 'Humanoid'   , 'Mountain'    , 1    ),
+                    ('Knight'                    , 'Humanoid'   , 'City'        , 1    ),
+                    ('Spy'                       , 'Humanoid'   , 'City'        , 1    ),
+                    ('Ghast'                     , 'Undead'     , 'Swamp'       , 2    ),
+                    ('Skeleton'                  , 'Undead'     , 'Dungeon'     , 2    ),
+                    ('Orge'                      , 'Giant'      , 'Hill'        , 2    ),
+                    ('Dragonpriest'              , 'Giant'      , 'Hill'        , 2    ),
+                    ('Cave Bear'                 , 'Beast'      , 'Forest'      , 2    ),
+                    ('Giant Elk'                 , 'Beast'      , 'Hill'        , 2    ),
+                    ('Swarm of poisonous Snakes' , 'Beast'      , 'Forest'      , 2    ),
+                    ('Bandit Captain'            , 'Humanoid'   , 'Forest'      , 2    ),
+                    ('Berserker'                 , 'Humanoid'   , 'Hill'        , 2    ),
+                    ('Berserker'                 , 'Humanoid'   , 'Hill'        , 2    ),
+                    ('Cult Fanatic'              , 'Humanoid'   , 'Mountain'    , 2    ),
+                    ('Archer'                    , 'Humanoid'   , 'Forest'      , 3    ),
+                    ('Hobgoblin'                 , 'Humanoid'   , 'Dungeon'     , 3    ),
+                    ('Werewolf'                  , 'Humanoid'   , 'Forest'      , 3    ),
+                    ('Giant Scorpion'            , 'Beast'      , 'Hill'        , 3    ),
+                    ('Twao headed Snake'         , 'Beast'      , 'Forest'      , 3    ),
+                    ('Giant Direwolf'            , 'Beast'      , 'Hill'        , 3    ),
+                    ('Earth Elemental'           , 'Elemental'  , 'Mountain'    , 3    ),
+                    ('Fire Elemental'            , 'Elemental'  , 'Mountain'    , 3    ),
+                    ('Water Elemental'           , 'Elemental'  , 'Hill'        , 3    ),
+                    ('Air Elemental'             , 'Elemental'  , 'Hill'        , 3    );
