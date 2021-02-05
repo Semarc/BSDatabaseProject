@@ -160,7 +160,6 @@ namespace DatabaseProject
 			return null;
 		}
 
-		static class HelperFunctions
 		public static string[] GetGegnerTypen()
 		{
 			MySqlDataReader Reader = null;
