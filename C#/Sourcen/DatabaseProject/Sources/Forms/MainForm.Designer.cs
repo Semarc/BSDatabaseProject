@@ -142,7 +142,6 @@
 		}
 
 		#endregion
-		private Namensgenerator namensgenerator1;
 		private System.Windows.Forms.TabPage tbp_WuerfelUtility;
 		private WuerfelUtility uc_WuerfelUtility;
 		private System.Windows.Forms.TabPage tbp_Namensgenerator;

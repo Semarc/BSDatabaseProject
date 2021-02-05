@@ -42,6 +42,10 @@ namespace DatabaseProject
 			public const string SelectTyp = "SELECT DISTINCT Typ FROM Loot";
 			public const string SelectSeltenheit = "SELECT DISTINCT Seltenheit FROM Loot";
 			public const string SelectBeute = "SELECT Name, Werte FROM Loot WHERE Typ = '[TYP]' AND Seltenheit = '[SELTENHEIT]' ORDER BY RAND() LIMIT 1";
+
+			public const string SelectGegnerTypen = "SELECT DISTINCT `Typ` FROM `Gegner`";
+			public const string SelectGegnerEnviroments = "SELECT DISTINCT `Enviroment` FROM `Gegner`";
+			public const string SelectGegnerCombatRatings = "SELECT DISTINCT `CR` FROM `Gegner`";
 		}
 
 		public static class SQLParameterNames

@@ -161,6 +161,109 @@ namespace DatabaseProject
 		}
 
 		static class HelperFunctions
+		public static string[] GetGegnerTypen()
+		{
+			MySqlDataReader Reader = null;
+			MySqlCommand Command = null;
+			try
+			{
+				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectGegnerTypen);
+				Reader = Command.ExecuteReader();
+
+				List<string> Results = new List<string>();
+				while (Reader.Read())
+				{
+					Results.Add(Reader.GetValue(0).ToString());
+				}
+
+				Results.Sort();
+				return Results.ToArray();
+			}
+#if !DEBUG
+			catch
+			{
+				return new[] { "Fehler beim Datenbankzugriff" };
+			}
+#endif
+			finally
+			{
+
+				Command?.Dispose();
+				Reader?.Close();
+
+			}
+			return null;
+		}
+		public static string[] GetGegnerEnviroments()
+		{
+			MySqlDataReader Reader = null;
+			MySqlCommand Command = null;
+			try
+			{
+				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectGegnerEnviroments);
+				Reader = Command.ExecuteReader();
+
+				List<string> Results = new List<string>();
+				while (Reader.Read())
+				{
+					Results.Add(Reader.GetValue(0).ToString());
+				}
+
+				Results.Sort();
+				return Results.ToArray();
+			}
+#if !DEBUG
+			catch
+			{
+				return new[] { "Fehler beim Datenbankzugriff" };
+			}
+#endif
+			finally
+			{
+
+				Command?.Dispose();
+				Reader?.Close();
+
+			}
+			return null;
+		}
+		public static string[] GetGegnerCombatRatings()
+		{
+			MySqlDataReader Reader = null;
+			MySqlCommand Command = null;
+			try
+			{
+				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectGegnerCombatRatings);
+				Reader = Command.ExecuteReader();
+
+				List<string> Results = new List<string>();
+				while (Reader.Read())
+				{
+					Results.Add(Reader.GetValue(0).ToString());
+				}
+
+				Results.Sort();
+				return Results.ToArray();
+			}
+#if !DEBUG
+			catch
+			{
+				return new[] { "Fehler beim Datenbankzugriff" };
+			}
+#endif
+			finally
+			{
+
+				Command?.Dispose();
+				Reader?.Close();
+
+			}
+			return null;
+		}
+
+
+
+		private static class HelperFunctions
 		{
 			public static string ReplaceParameters(ref string CommandText, SQLParameter[] Parameters)
 			{

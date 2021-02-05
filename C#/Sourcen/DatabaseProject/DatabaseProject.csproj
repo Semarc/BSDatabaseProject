@@ -92,6 +92,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\Forms\Gegner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\Gegner.Designer.cs">
+      <DependentUpon>Gegner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Forms\Loot.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sources\Forms\Gegner.resx">
+      <DependentUpon>Gegner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\Loot.resx">
       <DependentUpon>Loot.cs</DependentUpon>
     </EmbeddedResource>
