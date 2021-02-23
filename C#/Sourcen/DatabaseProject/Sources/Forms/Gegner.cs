@@ -54,5 +54,10 @@ namespace DatabaseProject.Sources.Forms
 						  $"Gegnerenviroment: {Results[2]}{Environment.NewLine}" +
 						  $"Gegner-CR: {Results[3]}{Environment.NewLine}";
 		}
-	}
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
