@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -35,7 +36,7 @@ namespace DatabaseProject
 		public static class SQLCommands
 		{
 			public const string SelectNachname = "SELECT Name FROM Nachnamen WHERE Volkname = '[VOLKSNAME]' ORDER BY RAND() LIMIT 1";
-			public const string SelectVorname = "SELECT Name FROM Vornamen WHERE Volkname = '[VOLKSNAME]' AND Geschlecht = '[GESCHLECHT]' ORDER BY RAND() LIMIT 1";
+			public const string SelectVorname = "SELECT Name FROM Vornamen WHERE Volkname = '" + ReplaceString.Volksname + "' AND Geschlecht = '" + ReplaceString.Geschlecht + "' ORDER BY RAND() LIMIT 1";
 
 			public const string SelectVoelker = "SELECT Volkname FROM Voelker";
 
@@ -46,6 +47,7 @@ namespace DatabaseProject
 			public const string SelectGegnerTypen = "SELECT DISTINCT `Typ` FROM `Gegner`";
 			public const string SelectGegnerEnviroments = "SELECT DISTINCT `Enviroment` FROM `Gegner`";
 			public const string SelectGegnerCombatRatings = "SELECT DISTINCT `CR` FROM `Gegner`";
+			public const string SelectGegner = "SELECT `Name`, `Typ`, `Enviroment`, `CR` FROM `Gegner` WHERE `CR` LIKE '" + ReplaceString.CombatRating + "' AND  `Enviroment` LIKE '" + ReplaceString.Enviroment + "' AND `Typ` LIKE '" + ReplaceString.Gegnertyp + "' ORDER BY RAND() LIMIT 1";
 		}
 
 		public static class SQLParameterNames
@@ -57,8 +59,13 @@ namespace DatabaseProject
 		{
 			public const string Volksname = "[VOLKSNAME]";
 			public const string Geschlecht = "[GESCHLECHT]";
+
 			public const string Typ = "[TYP]";
 			public const string Seltenheit = "[SELTENHEIT]";
+
+			public const string CombatRating = "[CombatRating]";
+			public const string Enviroment = "[Enviroment]";
+			public const string Gegnertyp = "[Gegnertyp]";
 		}
 
 	}

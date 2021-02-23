@@ -12,10 +12,6 @@ namespace DatabaseProject
 {
 	public partial class MainForm : Form
 	{
-		private WuerfelUtility Wuerfeler;
-		private Namensgenerator Namen;
-
-
 		public MainForm()
 		{
 			Konstanten.InitConnection();
@@ -24,28 +20,10 @@ namespace DatabaseProject
 			if (Konstanten.HasConnection == false)
 			{
 				tbc_MainControl.TabPages.Remove(tbp_Namensgenerator);
+				tbc_MainControl.TabPages.Remove(tbp_Gegner);
+				tbc_MainControl.TabPages.Remove(tbp_Loot);
 			}
 
 		}
-
-        private void tbp_WuerfelUtility_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uc_Namensgenerator_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uc_WuerfelUtility_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Loot_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

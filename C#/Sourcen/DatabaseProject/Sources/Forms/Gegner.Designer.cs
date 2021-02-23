@@ -29,52 +29,81 @@ namespace DatabaseProject.Sources.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.GegnerTyp = new System.Windows.Forms.ComboBox();
-			this.GegnerEnviroment = new System.Windows.Forms.ComboBox();
-			this.GegnerCombatRating = new System.Windows.Forms.ComboBox();
+			this.cbxGegnerTyp = new System.Windows.Forms.ComboBox();
+			this.cbxGegnerEnviroment = new System.Windows.Forms.ComboBox();
+			this.cbxGegnerCombatRating = new System.Windows.Forms.ComboBox();
+			this.btnGegnerZiehen = new System.Windows.Forms.Button();
+			this.ResultLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// GegnerTyp
 			// 
-			this.GegnerTyp.FormattingEnabled = true;
-			this.GegnerTyp.Location = new System.Drawing.Point(161, 79);
-			this.GegnerTyp.Name = "GegnerTyp";
-			this.GegnerTyp.Size = new System.Drawing.Size(121, 21);
-			this.GegnerTyp.TabIndex = 0;
+			this.cbxGegnerTyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxGegnerTyp.FormattingEnabled = true;
+			this.cbxGegnerTyp.Location = new System.Drawing.Point(161, 79);
+			this.cbxGegnerTyp.Name = "GegnerTyp";
+			this.cbxGegnerTyp.Size = new System.Drawing.Size(121, 21);
+			this.cbxGegnerTyp.TabIndex = 0;
 			// 
 			// GegnerEnviroment
 			// 
-			this.GegnerEnviroment.FormattingEnabled = true;
-			this.GegnerEnviroment.Location = new System.Drawing.Point(161, 131);
-			this.GegnerEnviroment.Name = "GegnerEnviroment";
-			this.GegnerEnviroment.Size = new System.Drawing.Size(121, 21);
-			this.GegnerEnviroment.TabIndex = 1;
+			this.cbxGegnerEnviroment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxGegnerEnviroment.FormattingEnabled = true;
+			this.cbxGegnerEnviroment.Location = new System.Drawing.Point(161, 131);
+			this.cbxGegnerEnviroment.Name = "GegnerEnviroment";
+			this.cbxGegnerEnviroment.Size = new System.Drawing.Size(121, 21);
+			this.cbxGegnerEnviroment.TabIndex = 1;
 			// 
 			// GegnerCombatRating
 			// 
-			this.GegnerCombatRating.FormattingEnabled = true;
-			this.GegnerCombatRating.Location = new System.Drawing.Point(161, 179);
-			this.GegnerCombatRating.Name = "GegnerCombatRating";
-			this.GegnerCombatRating.Size = new System.Drawing.Size(121, 21);
-			this.GegnerCombatRating.TabIndex = 2;
+			this.cbxGegnerCombatRating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxGegnerCombatRating.FormattingEnabled = true;
+			this.cbxGegnerCombatRating.Location = new System.Drawing.Point(161, 179);
+			this.cbxGegnerCombatRating.Name = "GegnerCombatRating";
+			this.cbxGegnerCombatRating.Size = new System.Drawing.Size(121, 21);
+			this.cbxGegnerCombatRating.TabIndex = 2;
+			// 
+			// button1
+			// 
+			this.btnGegnerZiehen.Location = new System.Drawing.Point(349, 94);
+			this.btnGegnerZiehen.Name = "button1";
+			this.btnGegnerZiehen.Size = new System.Drawing.Size(75, 23);
+			this.btnGegnerZiehen.TabIndex = 3;
+			this.btnGegnerZiehen.Text = "Gegner Generieren";
+			this.btnGegnerZiehen.UseVisualStyleBackColor = true;
+			this.btnGegnerZiehen.Click += new System.EventHandler(this.GegnerZiehen);
+			// 
+			// label1
+			// 
+			this.ResultLabel.AutoSize = true;
+			this.ResultLabel.Location = new System.Drawing.Point(349, 186);
+			this.ResultLabel.Name = "label1";
+			this.ResultLabel.Size = new System.Drawing.Size(42, 13);
+			this.ResultLabel.TabIndex = 4;
+			this.ResultLabel.Text = "Gegner";
 			// 
 			// Gegner
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.GegnerCombatRating);
-			this.Controls.Add(this.GegnerEnviroment);
-			this.Controls.Add(this.GegnerTyp);
+			this.Controls.Add(this.ResultLabel);
+			this.Controls.Add(this.btnGegnerZiehen);
+			this.Controls.Add(this.cbxGegnerCombatRating);
+			this.Controls.Add(this.cbxGegnerEnviroment);
+			this.Controls.Add(this.cbxGegnerTyp);
 			this.Name = "Gegner";
-			this.Size = new System.Drawing.Size(744, 448);
+			this.Size = new System.Drawing.Size(564, 383);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.ComboBox GegnerTyp;
-		private System.Windows.Forms.ComboBox GegnerEnviroment;
-		private System.Windows.Forms.ComboBox GegnerCombatRating;
+		private System.Windows.Forms.ComboBox cbxGegnerTyp;
+		private System.Windows.Forms.ComboBox cbxGegnerEnviroment;
+		private System.Windows.Forms.ComboBox cbxGegnerCombatRating;
+		private System.Windows.Forms.Button btnGegnerZiehen;
+		private System.Windows.Forms.Label ResultLabel;
 	}
 }

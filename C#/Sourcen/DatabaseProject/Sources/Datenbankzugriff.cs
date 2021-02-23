@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace DatabaseProject
 			return GetDatabaseString(Konstanten.SQLCommands.SelectBeute, new SQLParameter(Konstanten.ReplaceString.Typ, Typ), new SQLParameter(Konstanten.ReplaceString.Seltenheit, Seltenheit));
 		}
 
-		public static string GetDatabaseString(string CommandText, params SQLParameter[] Parameters)
+		private static string GetDatabaseString(string CommandText, params SQLParameter[] Parameters)
 		{
 			MySqlDataReader Reader = null;
 			MySqlCommand Command = null;
@@ -35,7 +36,6 @@ namespace DatabaseProject
 				Reader = Command.ExecuteReader();
 				if (Reader.Read())
 				{
-					Reader.Read();
 					return Reader.GetValue(0).ToString();
 				}
 				else
@@ -59,13 +59,61 @@ namespace DatabaseProject
 		}
 		#endregion
 
-		public static string[] GetVoelkerNamen()
+		#region GetStrings
+
+		public static string[] GetGegner(string CombatRating, string Enviroment, string Gegnertyp)
+		{
+			return GetThreeDatabaseStrings(Konstanten.SQLCommands.SelectGegner, new SQLParameter(Konstanten.ReplaceString.CombatRating, CombatRating), new SQLParameter(Konstanten.ReplaceString.Enviroment, Enviroment), new SQLParameter(Konstanten.ReplaceString.Gegnertyp, Gegnertyp));
+		}
+
+		private static string[] GetThreeDatabaseStrings(string CommandText, params SQLParameter[] Parameters)
 		{
 			MySqlDataReader Reader = null;
 			MySqlCommand Command = null;
 			try
 			{
-				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectVoelker);
+				HelperFunctions.ReplaceParameters(ref CommandText, Parameters);
+
+				Command = HelperFunctions.GetNewCommand(CommandText);
+
+				string[] stringArray = new string[4];
+
+				Reader = Command.ExecuteReader();
+				if (Reader.Read())
+				{
+					stringArray[0] = Reader.GetValue(0).ToString();
+					stringArray[1] = Reader.GetValue(1).ToString();
+					stringArray[2] = Reader.GetValue(2).ToString();
+					stringArray[3] = Reader.GetValue(3).ToString();
+				}
+				return stringArray;
+			}
+#if !DEBUG
+			catch
+			{
+				return "Fehler beim Datenbankzugriff";
+			}
+#endif
+			finally
+			{
+
+				Command?.Dispose();
+				Reader?.Close();
+
+			}
+		}
+
+		#endregion
+
+		#region GetStringArray
+
+		private static string[] GetStringArray(string CommandString)
+		{
+			MySqlDataReader Reader = null;
+			MySqlCommand Command = null;
+			try
+			{
+				Command = HelperFunctions.GetNewCommand(CommandString);
 				Reader = Command.ExecuteReader();
 
 				List<string> Results = new List<string>();
@@ -90,177 +138,35 @@ namespace DatabaseProject
 				Reader?.Close();
 
 			}
-			return null;
+		}
+
+		public static string[] GetVoelkerNamen()
+		{
+			return GetStringArray(Konstanten.SQLCommands.SelectVoelker);
 		}
 
 		public static string[] GetTyp()
 		{
-			MySqlDataReader Reader = null;
-			MySqlCommand Command = null;
-			try
-			{
-				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectTyp);
-				Reader = Command.ExecuteReader();
-
-				List<string> Results = new List<string>();
-				while (Reader.Read())
-				{
-					Results.Add(Reader.GetValue(0).ToString());
-				}
-
-				Results.Sort();
-				return Results.ToArray();
-			}
-#if !DEBUG
-			catch
-			{
-				return new[] { "Fehler beim Datenbankzugriff" };
-			}
-#endif
-			finally
-			{
-
-				Command?.Dispose();
-				Reader?.Close();
-
-			}
-			return null;
+			return GetStringArray(Konstanten.SQLCommands.SelectTyp);
 		}
 		public static string[] GetSeltenheit()
 		{
-			MySqlDataReader Reader = null;
-			MySqlCommand Command = null;
-			try
-			{
-				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectSeltenheit);
-				Reader = Command.ExecuteReader();
-
-				List<string> Results = new List<string>();
-				while (Reader.Read())
-				{
-					Results.Add(Reader.GetValue(0).ToString());
-				}
-
-				Results.Sort();
-				return Results.ToArray();
-			}
-#if !DEBUG
-			catch
-			{
-				return new[] { "Fehler beim Datenbankzugriff" };
-			}
-#endif
-			finally
-			{
-
-				Command?.Dispose();
-				Reader?.Close();
-
-			}
-			return null;
+			return GetStringArray(Konstanten.SQLCommands.SelectSeltenheit);
 		}
 
 		public static string[] GetGegnerTypen()
 		{
-			MySqlDataReader Reader = null;
-			MySqlCommand Command = null;
-			try
-			{
-				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectGegnerTypen);
-				Reader = Command.ExecuteReader();
-
-				List<string> Results = new List<string>();
-				while (Reader.Read())
-				{
-					Results.Add(Reader.GetValue(0).ToString());
-				}
-
-				Results.Sort();
-				return Results.ToArray();
-			}
-#if !DEBUG
-			catch
-			{
-				return new[] { "Fehler beim Datenbankzugriff" };
-			}
-#endif
-			finally
-			{
-
-				Command?.Dispose();
-				Reader?.Close();
-
-			}
-			return null;
+			return GetStringArray(Konstanten.SQLCommands.SelectGegnerTypen);
 		}
 		public static string[] GetGegnerEnviroments()
 		{
-			MySqlDataReader Reader = null;
-			MySqlCommand Command = null;
-			try
-			{
-				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectGegnerEnviroments);
-				Reader = Command.ExecuteReader();
-
-				List<string> Results = new List<string>();
-				while (Reader.Read())
-				{
-					Results.Add(Reader.GetValue(0).ToString());
-				}
-
-				Results.Sort();
-				return Results.ToArray();
-			}
-#if !DEBUG
-			catch
-			{
-				return new[] { "Fehler beim Datenbankzugriff" };
-			}
-#endif
-			finally
-			{
-
-				Command?.Dispose();
-				Reader?.Close();
-
-			}
-			return null;
+			return GetStringArray(Konstanten.SQLCommands.SelectGegnerEnviroments);
 		}
 		public static string[] GetGegnerCombatRatings()
 		{
-			MySqlDataReader Reader = null;
-			MySqlCommand Command = null;
-			try
-			{
-				Command = HelperFunctions.GetNewCommand(Konstanten.SQLCommands.SelectGegnerCombatRatings);
-				Reader = Command.ExecuteReader();
-
-				List<string> Results = new List<string>();
-				while (Reader.Read())
-				{
-					Results.Add(Reader.GetValue(0).ToString());
-				}
-
-				Results.Sort();
-				return Results.ToArray();
-			}
-#if !DEBUG
-			catch
-			{
-				return new[] { "Fehler beim Datenbankzugriff" };
-			}
-#endif
-			finally
-			{
-
-				Command?.Dispose();
-				Reader?.Close();
-
-			}
-			return null;
+			return GetStringArray(Konstanten.SQLCommands.SelectGegnerCombatRatings);
 		}
-
-
+		#endregion
 
 		private static class HelperFunctions
 		{

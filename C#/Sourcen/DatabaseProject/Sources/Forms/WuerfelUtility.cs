@@ -19,7 +19,7 @@ namespace DatabaseProject
 			D100 = 100
 		}
 
-		Random RNG = new Random();
+		readonly Random RNG = new Random();
 
 		public WuerfelUtility()
 		{
